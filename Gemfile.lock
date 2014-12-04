@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    pdf-img-grid (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -12,5 +17,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 1.3)
+  pdf-img-grid!
   prawn
   prawn-table
