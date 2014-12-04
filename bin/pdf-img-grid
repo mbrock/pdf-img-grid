@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'bundler/setup'
+
+require 'prawn'
+require 'prawn/table'
+
+def markup s
+  if File.basename(s) =~ /^(\d+)\s?(.*)\.(.*?)$/
+    "<b>#$1</b> #$2"
+  else
+    s
+  end
+end
+
+pdf = Prawn::Document.new(page_size: "A4",
+                    page_layout: :landscape,
+                    margin: 10) do
+  font 'Helvetica'
+  font_size 7
+  
+  cells = ARGV.each_slice(6).to_a.map do |filenames|
+    filenames.map do |filename|
+      make_table([ [ { image: filename, image_height: 85 } ],
+                   [ markup(filename) ] ],
+                 cell_style: { borders: [], inline_format: true })
+    end
+  end
+
+  table cells, cell_style: { borders: [] }
+end
+
+print pdf.render
