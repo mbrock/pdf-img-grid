@@ -19,7 +19,7 @@ pdf = Prawn::Document.new(page_size: "A4",
   font 'Helvetica'
   font_size 7
   
-  cells = ARGV.each_slice(6).to_a.map do |filenames|
+  cells = Dir["#{ARGV[0]}/*"].each_slice(6).to_a.map do |filenames|
     filenames.map do |filename|
       make_table([ [ { image: filename, image_height: 85 } ],
                    [ markup(filename) ] ],

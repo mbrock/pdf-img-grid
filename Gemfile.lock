@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pdf-img-grid (0.0.1)
+    pdf-img-grid (0.0.2)
 
 GEM
   remote: https://rubygems.org/
@@ -11,6 +11,7 @@ GEM
       pdf-core (~> 0.4.0)
       ttfunk (~> 1.4.0)
     prawn-table (0.2.1)
+    rake (10.0.4)
     ttfunk (1.4.0)
 
 PLATFORMS
@@ -21,3 +22,4 @@ DEPENDENCIES
   pdf-img-grid!
   prawn
   prawn-table
+  rake

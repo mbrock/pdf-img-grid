@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "pdf-img-grid"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.2"
   spec.authors       = ["Mikael Brockman"]
   spec.email         = ["mikael@brockman.se"]
   spec.description   = %q{Generates a PDF grid of images}
