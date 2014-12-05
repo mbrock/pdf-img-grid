@@ -14,14 +14,14 @@ def markup s
 end
 
 pdf = Prawn::Document.new(page_size: "A4",
-                    page_layout: :landscape,
-                    margin: 10) do
+                          page_layout: :landscape,
+                          margin: 10) do
   font 'Helvetica'
   font_size 7
   
   cells = Dir["#{ARGV[0]}/*"].each_slice(6).to_a.map do |filenames|
     filenames.map do |filename|
-      make_table([ [ { image: filename, image_height: 85 } ],
+      make_table([ [ { image: filename, image_height: 75 } ],
                    [ markup(filename) ] ],
                  cell_style: { borders: [], inline_format: true })
     end
